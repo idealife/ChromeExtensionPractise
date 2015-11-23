@@ -1,0 +1,23 @@
+{  
+  "name": "DBQuery Helper",  
+  "version": "0.0.1",  
+  "manifest_version": 2,
+  "description": "定制dbquery查询结果的高度",  
+  "permissions": ["tabs", "www.baidu.com"],
+  "browser_action": {  
+    "default_icon": "icon.png" ,
+    "default_title": "DBQuery Helper",
+    "default_popup": "popup.html"
+  },  
+  "page_action": {
+		"default_icon":"icon.png",
+		"default_title": "DBQuery Helper", 
+		"default_popup": "popup.html"
+  }, 
+  "content_scripts":[ 
+    {
+		"matches":["http://www.baidu.com/*"],
+		"js":["jquery-2.0.0.min.js", "content_script.js"],
+		"run_at":"document_end"
+	}]
+} 
